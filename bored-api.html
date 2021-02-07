@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fun with api</title>
+</head>
+<body>
+    <h2 id="activity"></h2>
+    <script>
+        function findTask(){
+            fetch('https://www.boredapi.com/api/activity/') //semi-colon makes error here
+        .then(res =>res.json())
+        .then(data =>{
+            // console.log(data)   //semi-colon makes error here
+           document.getElementById('activity').innerText = data.activity;
+        })
+        } 
+        findTask();
+        setInterval(() => {
+            findTask();
+        }, 1000);
+    </script>
+</body>
+</html>
